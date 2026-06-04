@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brick Field Kft. — Géppark</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Segoe UI",Arial,sans-serif; color:#1a1a1a; }
+:root { --cbg: url("images/beton.jpg"); --red: #e02020; }
+
+/* NAV: beton háttér világosabban */
+nav {
+  position:sticky; top:0; z-index:99;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 40px; height:96px;
+  border-bottom:3px solid var(--red);
+  position:sticky;
+  background-image:var(--cbg);
+  background-size:cover;
+  background-position:center top;
+  /* Fehér réteg a beton felett = világosabb hatás */
+  box-shadow:inset 0 0 0 9999px rgba(255,255,255,0.35);
+}
+.nlinks { display:flex; gap:22px; list-style:none; }
+.nlinks a { color:#111; text-decoration:none; font-size:11px; letter-spacing:1.2px; text-transform:uppercase; font-weight:700; }
+.nlinks a:hover, .nlinks a.active { color:var(--red); }
+.ncta { background:var(--red); color:#fff; border:none; padding:12px 20px; font-size:11px; font-weight:700; cursor:pointer; text-transform:uppercase; letter-spacing:1px; white-space:nowrap; text-decoration:none; display:inline-block; }
+
+.sec-lbl { font-size:10px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--red); margin-bottom:10px; }
+.sec-title { font-size:28px; font-weight:800; color:#111; margin-bottom:16px; line-height:1.2; }
+.sec-title.white { color:#fff; }
+
+footer {
+  background-image:var(--cbg); background-size:cover; background-position:center bottom;
+  box-shadow:inset 0 0 0 9999px rgba(255,255,255,0.50);
+  padding:40px; display:flex; align-items:center; justify-content:space-between;
+  border-top:3px solid var(--red); flex-wrap:wrap; gap:24px;
+}
+.fls { display:flex; gap:24px; flex-wrap:wrap; }
+.fls a { color:#111; font-size:12px; text-decoration:none; font-weight:700; }
+.fls a:hover { color:var(--red); }
+.footer-info { font-size:12px; color:#111; line-height:1.9; font-weight:600; }
+
+.strip { background:var(--red); padding:14px 40px; }
+.strip p { color:#fff; font-size:13px; font-weight:700; }
+.strip a { color:#fff; text-decoration:none; }
+.btn-red     { background:var(--red); color:#fff; border:none; padding:14px 30px; font-size:13px; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block; }
+.btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.6); padding:13px 28px; font-size:13px; font-weight:600; cursor:pointer; text-decoration:none; display:inline-block; }
+.btn-white   { background:#fff; color:var(--red); border:none; padding:14px 30px; font-size:13px; font-weight:800; cursor:pointer; text-decoration:none; display:inline-block; }
+.btn-dark    { background:#111; color:#fff; border:none; padding:14px 30px; font-size:13px; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block; }
+
+.page-hero { background:#2a2a2a; padding:60px 40px; position:relative; overflow:hidden; border-bottom:3px solid var(--red); }
+.page-hero-bars { position:absolute; right:0; top:0; bottom:0; width:30%; display:flex; align-items:stretch; gap:14px; padding-left:30px; overflow:hidden; }
+.pb1 { flex:0 0 10px; background:var(--red); opacity:.9; transform:skewX(-7deg); }
+.pb2 { flex:0 0 18px; background:var(--red); opacity:.5; transform:skewX(-7deg); }
+.pb3 { flex:0 0 8px; background:#555; opacity:.4; transform:skewX(-7deg); }
+.page-hero h1 { font-size:36px; font-weight:800; color:#fff; position:relative; z-index:2; }
+.page-hero h1 span { color:var(--red); }
+.page-hero p { font-size:14px; color:#aaa; margin-top:10px; position:relative; z-index:2; max-width:600px; }
+
+.cta-band { padding:64px 40px; background:var(--red); display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap; }
+.cta-band h2 { font-size:28px; font-weight:800; color:#fff; }
+.cta-band p { font-size:14px; color:rgba(255,255,255,.85); margin-top:8px; }
+
+/* Beton szekciók: világos beton, enyhe fehér overlay, fehér kártyák */
+.concrete-section {
+  padding:72px 40px;
+  background-image:var(--cbg);
+  background-size:cover;
+  background-position:center;
+  box-shadow:inset 0 0 0 9999px rgba(255,255,255,0.15);
+}
+.card-white { border:1px solid #bbb; border-top:3px solid var(--red); padding:26px 22px; background:rgba(255,255,255,.92); }
+.card-icon { width:42px; height:42px; background:var(--red); display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+.card-icon i { color:#fff; font-size:20px; }
+
+.gep-intro { padding:72px 40px; background:#fff; }
+.gep-intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; margin-top:36px; }
+.gep-intro p { font-size:14px; color:#555; line-height:1.8; margin-bottom:14px; }
+.elony-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+.elony-card { display:flex; align-items:flex-start; gap:14px; padding:20px; border-left:3px solid #e02020; background:#fafafa; }
+.elony-icon { width:38px; height:38px; background:#e02020; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.elony-icon i { color:#fff; font-size:18px; }
+.elony-card h4 { font-size:13px; font-weight:700; color:#111; margin-bottom:5px; }
+.elony-card p { font-size:12px; color:#666; line-height:1.6; }
+.gepek-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:38px; }
+.gep-card { border:1px solid #bbb; border-top:3px solid #e02020; background:rgba(255,255,255,.92); overflow:hidden; }
+.gep-img { height:180px; background:#c5c5c0; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px; }
+.gep-img i { font-size:48px; color:#999; }
+.gep-img span { font-size:11px; color:#aaa; }
+.gep-body { padding:20px 18px; }
+.gep-body h3 { font-size:15px; font-weight:700; color:#111; margin-bottom:8px; }
+.gep-body p { font-size:13px; color:#555; line-height:1.7; }
+.gep-tag { display:inline-block; background:#e02020; color:#fff; font-size:10px; font-weight:700; padding:3px 10px; margin-top:10px; letter-spacing:1px; text-transform:uppercase; }
+.allvany { padding:72px 40px; background:#111; }
+.allvany .sec-title { color:#fff; }
+.allvany-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; margin-top:40px; }
+.allvany-img { height:300px; background-image:url("images/beton.jpg"); background-size:cover; background-position:center; position:relative; border-left:4px solid #e02020; display:flex; align-items:center; justify-content:center; }
+.allvany-img-ov { position:absolute; inset:0; background:rgba(0,0,0,.15); }
+.allvany-img span { color:#ccc; font-size:13px; position:relative; z-index:2; }
+.allvany-text p { font-size:14px; color:#aaa; line-height:1.8; margin-bottom:14px; }
+.allvany-stat { display:flex; gap:32px; margin-top:28px; padding-top:24px; border-top:1px solid #333; }
+.astat-num { font-size:36px; font-weight:800; color:#e02020; }
+.astat-lbl { font-size:11px; color:#888; letter-spacing:1px; text-transform:uppercase; margin-top:3px; }
+.allvany-chips { display:flex; gap:10px; flex-wrap:wrap; margin-top:24px; }
+.achip { background:#222; border:1px solid #333; color:#ccc; font-size:11px; font-weight:700; padding:7px 14px; }
+
+/* Cookie sáv */
+#cookie-banner {
+  position:fixed; bottom:0; left:0; right:0; z-index:9999;
+  background:rgba(20,20,20,0.97);
+  border-top:3px solid #e02020;
+  padding:18px 40px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:24px; flex-wrap:wrap;
+}
+#cookie-banner p { color:#ccc; font-size:13px; line-height:1.6; max-width:700px; }
+#cookie-banner a { color:#e02020; text-decoration:underline; }
+.cookie-btns { display:flex; gap:12px; flex-shrink:0; }
+.cookie-accept { background:#e02020; color:#fff; border:none; padding:10px 24px; font-size:13px; font-weight:700; cursor:pointer; }
+.cookie-reject { background:transparent; color:#888; border:1px solid #555; padding:10px 24px; font-size:13px; font-weight:600; cursor:pointer; }
+</style>
+</head>
+<body><nav><img src="images/logo.jpg" alt="Brick Field Kft." style="height:90px;width:auto;display:block;mix-blend-mode:multiply;"><ul class="nlinks"><li><a href="index.html" class="">Főoldal</a></li><li><a href="rolunk.html" class="">Rólunk</a></li><li><a href="szolgaltatasok.html" class="">Szolgáltatások</a></li><li><a href="geppark.html" class="active">Géppark</a></li><li><a href="referenciak.html" class="">Referenciák</a></li><li><a href="kapcsolat.html" class="">Kapcsolat</a></li></ul><a href="kapcsolat.html" class="ncta">Ajánlatot kérek</a></nav>
+<div class="page-hero">
+  <div class="page-hero-bars"><div class="pb1"></div><div class="pb2"></div><div class="pb3"></div></div>
+  <div class="sec-lbl">Felszereltségünk</div>
+  <h1>Géppark — <span>saját eszközök, profi munka</span></h1>
+  <p>Saját gépparkkal és 1500 nm-es állványrendszerrel rendelkezünk — ez gyorsabb munkát, alacsonyabb költséget és jobb minőséget jelent.</p>
+</div>
+<section class="gep-intro">
+  <div class="sec-lbl">Az előnyök</div>
+  <div class="sec-title">Miért jobb a saját géppark?</div>
+  <div class="gep-intro-grid">
+    <div>
+      <p>A Brick Field Kft. saját gépparkkal dolgozik. Ez közvetlen előnyöket jelent minden projektünkön.</p>
+      <p>Nincs gépbérlési várakozási idő, nincs extra díj, és a gépeinket pontosan ismerjük.</p>
+    </div>
+    <div class="elony-grid">
+      <div class="elony-card"><div class="elony-icon"><i class="ti ti-clock-bolt"></i></div><div><h4>Gyorsabb kivitelezés</h4><p>Nem kell bérgépre várni — azonnal elkezdhetjük.</p></div></div>
+      <div class="elony-card"><div class="elony-icon"><i class="ti ti-coin"></i></div><div><h4>Kedvezőbb ár</h4><p>Nincs bérleti felár — a megtakarítást az ügyfeleinknél hagyjuk.</p></div></div>
+      <div class="elony-card"><div class="elony-icon"><i class="ti ti-settings-check"></i></div><div><h4>Karbantartott állapot</h4><p>Saját gépeink mindig szervizelt állapotban vannak.</p></div></div>
+      <div class="elony-card"><div class="elony-icon"><i class="ti ti-arrows-maximize"></i></div><div><h4>Nagy kapacitás</h4><p>Több géppel párhuzamosan is dolgozhatunk.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="concrete-section">
+  <div class="sec-lbl">Gépeink</div>
+  <div class="sec-title">Géppark</div>
+  <div class="gepek-grid">
+    <div class="gep-card"><div class="gep-img"><i class="ti ti-box"></i><span>[ Fotó hamarosan ]</span></div><div class="gep-body"><h3>Esztrich gép</h3><p>Nagy teljesítményű gépi esztrich kivitelezéshez, nagy felületeken is.</p><span class="gep-tag">Betonozás</span></div></div>
+    <div class="gep-card"><div class="gep-img"><i class="ti ti-spray"></i><span>[ Fotó hamarosan ]</span></div><div class="gep-body"><h3>Gépi vakológép</h3><p>Folyamatos gépi vakoláshoz — egyenletes felület, kevesebb munkaidő.</p><span class="gep-tag">Vakolás</span></div></div>
+    <div class="gep-card"><div class="gep-img"><i class="ti ti-paint"></i><span>[ Fotó hamarosan ]</span></div><div class="gep-body"><h3>Gépi festékszóró</h3><p>Ipari gépi festés és glettelés nagy felületeken, profi eredmény.</p><span class="gep-tag">Festés</span></div></div>
+    <div class="gep-card"><div class="gep-img"><i class="ti ti-color-swatch"></i><span>[ Fotó hamarosan ]</span></div><div class="gep-body"><h3>Gépi színező berendezés</h3><p>Homlokzati és belső gépi színezéshez, tartós bevonat.</p><span class="gep-tag">Színezés</span></div></div>
+    <div class="gep-card"><div class="gep-img"><i class="ti ti-augmented-reality"></i><span>[ Fotó hamarosan ]</span></div><div class="gep-body"><h3>Glettelőgép</h3><p>Gépi glettelés — tökéletesen sima alapfelület töredék idő alatt.</p><span class="gep-tag">Glettelés</span></div></div>
+    <div class="gep-card"><div class="gep-img"><i class="ti ti-tool"></i><span>[ Fotó hamarosan ]</span></div><div class="gep-body"><h3>Egyéb eszközök</h3><p>Teljes eszközpark kőműves, burkoló és térkövező munkákhoz.</p><span class="gep-tag">Vegyes</span></div></div>
+  </div>
+</section>
+<section class="allvany">
+  <div class="sec-lbl">Állványrendszer</div>
+  <div class="sec-title white">1500 nm saját állványrendszer</div>
+  <div class="allvany-grid">
+    <div class="allvany-img"><div class="allvany-img-ov"></div><span>[ Állványrendszer fotó ]</span></div>
+    <div class="allvany-text">
+      <p>Saját, <strong style="color:#e02020;">1500 négyzetméter</strong> kapacitású állványrendszerrel rendelkezünk.</p>
+      <p>Nem kell állványt bérelni, nem kell várni. Saját csapatunk szereli fel és bontja le.</p>
+      <p>Nagyobb társasházi homlokzatokat is egyetlen munkafázisban kezelünk — gyorsabban és olcsóbban.</p>
+      <div class="allvany-stat">
+        <div><div class="astat-num">1500</div><div class="astat-lbl">nm állványrendszer</div></div>
+        <div><div class="astat-num">10+</div><div class="astat-lbl">Év tapasztalat</div></div>
+      </div>
+      <div class="allvany-chips">
+        <div class="achip">Saját tulajdon</div><div class="achip">Gyors felszerelés</div>
+        <div class="achip">Nagy kapacitás</div><div class="achip">Nincs bérleti díj</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="cta-band">
+  <div><h2>Érdekli a kapacitásunk?</h2><p>Kérjen díjmentes helyszíni felmérést!</p></div>
+  <a href="kapcsolat.html" class="btn-white">Ajánlatot kérek →</a>
+</div>
+<footer>
+  <img src="images/logo_transparent.png" alt="Brick Field Kft." style="height:240px;width:auto;display:block;">
+  <div class="footer-info"><strong>BRICK FIELD Kft.</strong><br>2030 Érd, Facélia utca 42.<br>Adószám: 25364570-2-13<br>Cégjegyzékszám: 13 09 239393</div>
+  <div style="font-size:12px;color:#111;font-weight:600;">© 2025 Brick Field Kft.<br>Minden jog fenntartva.</div>
+  <div class="fls"><a href="kapcsolat.html">Kapcsolat</a><a href="#">Adatvédelem</a><a href="https://www.facebook.com/search/top?q=brick%20field%20-%20%C3%A9p%C3%ADt%C5%91ipari%20kivitelez%C3%A9s" target="_blank">Facebook</a></div>
+</footer>
+<div id="cookie-banner">
+  <p>🍪 Ez a weboldal sütiket (cookie-kat) használ a jobb felhasználói élmény érdekében. A sütik segítenek megérteni, hogyan használják látogatóink az oldalt. <a href="#">Adatvédelmi tájékoztató</a></p>
+  <div class="cookie-btns">
+    <button class="cookie-accept" onclick="acceptCookies()">Elfogadom</button>
+    <button class="cookie-reject" onclick="rejectCookies()">Elutasítom</button>
+  </div>
+</div>
+<script>
+function acceptCookies() {
+  localStorage.setItem('cookieConsent', 'accepted');
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+function rejectCookies() {
+  localStorage.setItem('cookieConsent', 'rejected');
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+if (localStorage.getItem('cookieConsent')) {
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+</body>
+</html>

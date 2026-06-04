@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brick Field Kft. — Kapcsolat</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Segoe UI",Arial,sans-serif; color:#1a1a1a; }
+:root { --cbg: url("images/beton.jpg"); --red: #e02020; }
+
+/* NAV: beton háttér világosabban */
+nav {
+  position:sticky; top:0; z-index:99;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 40px; height:96px;
+  border-bottom:3px solid var(--red);
+  position:sticky;
+  background-image:var(--cbg);
+  background-size:cover;
+  background-position:center top;
+  /* Fehér réteg a beton felett = világosabb hatás */
+  box-shadow:inset 0 0 0 9999px rgba(255,255,255,0.35);
+}
+.nlinks { display:flex; gap:22px; list-style:none; }
+.nlinks a { color:#111; text-decoration:none; font-size:11px; letter-spacing:1.2px; text-transform:uppercase; font-weight:700; }
+.nlinks a:hover, .nlinks a.active { color:var(--red); }
+.ncta { background:var(--red); color:#fff; border:none; padding:12px 20px; font-size:11px; font-weight:700; cursor:pointer; text-transform:uppercase; letter-spacing:1px; white-space:nowrap; text-decoration:none; display:inline-block; }
+
+.sec-lbl { font-size:10px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--red); margin-bottom:10px; }
+.sec-title { font-size:28px; font-weight:800; color:#111; margin-bottom:16px; line-height:1.2; }
+.sec-title.white { color:#fff; }
+
+footer {
+  background-image:var(--cbg); background-size:cover; background-position:center bottom;
+  box-shadow:inset 0 0 0 9999px rgba(255,255,255,0.50);
+  padding:40px; display:flex; align-items:center; justify-content:space-between;
+  border-top:3px solid var(--red); flex-wrap:wrap; gap:24px;
+}
+.fls { display:flex; gap:24px; flex-wrap:wrap; }
+.fls a { color:#111; font-size:12px; text-decoration:none; font-weight:700; }
+.fls a:hover { color:var(--red); }
+.footer-info { font-size:12px; color:#111; line-height:1.9; font-weight:600; }
+
+.strip { background:var(--red); padding:14px 40px; }
+.strip p { color:#fff; font-size:13px; font-weight:700; }
+.strip a { color:#fff; text-decoration:none; }
+.btn-red     { background:var(--red); color:#fff; border:none; padding:14px 30px; font-size:13px; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block; }
+.btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.6); padding:13px 28px; font-size:13px; font-weight:600; cursor:pointer; text-decoration:none; display:inline-block; }
+.btn-white   { background:#fff; color:var(--red); border:none; padding:14px 30px; font-size:13px; font-weight:800; cursor:pointer; text-decoration:none; display:inline-block; }
+.btn-dark    { background:#111; color:#fff; border:none; padding:14px 30px; font-size:13px; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block; }
+
+.page-hero { background:#2a2a2a; padding:60px 40px; position:relative; overflow:hidden; border-bottom:3px solid var(--red); }
+.page-hero-bars { position:absolute; right:0; top:0; bottom:0; width:30%; display:flex; align-items:stretch; gap:14px; padding-left:30px; overflow:hidden; }
+.pb1 { flex:0 0 10px; background:var(--red); opacity:.9; transform:skewX(-7deg); }
+.pb2 { flex:0 0 18px; background:var(--red); opacity:.5; transform:skewX(-7deg); }
+.pb3 { flex:0 0 8px; background:#555; opacity:.4; transform:skewX(-7deg); }
+.page-hero h1 { font-size:36px; font-weight:800; color:#fff; position:relative; z-index:2; }
+.page-hero h1 span { color:var(--red); }
+.page-hero p { font-size:14px; color:#aaa; margin-top:10px; position:relative; z-index:2; max-width:600px; }
+
+.cta-band { padding:64px 40px; background:var(--red); display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap; }
+.cta-band h2 { font-size:28px; font-weight:800; color:#fff; }
+.cta-band p { font-size:14px; color:rgba(255,255,255,.85); margin-top:8px; }
+
+/* Beton szekciók: világos beton, enyhe fehér overlay, fehér kártyák */
+.concrete-section {
+  padding:72px 40px;
+  background-image:var(--cbg);
+  background-size:cover;
+  background-position:center;
+  box-shadow:inset 0 0 0 9999px rgba(255,255,255,0.15);
+}
+.card-white { border:1px solid #bbb; border-top:3px solid var(--red); padding:26px 22px; background:rgba(255,255,255,.92); }
+.card-icon { width:42px; height:42px; background:var(--red); display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+.card-icon i { color:#fff; font-size:20px; }
+
+.contact-main { padding:72px 40px; background:#fff; }
+.cgrid { display:grid; grid-template-columns:1fr 1fr; gap:56px; }
+.ci { display:flex; align-items:flex-start; gap:16px; margin-bottom:28px; }
+.cion { width:48px; height:48px; background:#e02020; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.cion i { color:#fff; font-size:22px; }
+.clbl { font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#999; margin-bottom:3px; }
+.cval { font-size:16px; font-weight:700; color:#111; }
+.cval a { color:#111; text-decoration:none; }
+.cval a:hover { color:#e02020; }
+.csub { font-size:12px; color:#aaa; margin-top:3px; }
+.cmap { margin-top:24px; border:2px solid #e02020; overflow:hidden; }
+.cmap iframe { width:100%; height:240px; border:none; display:block; }
+.cform { background:#111; padding:36px 32px; }
+.cft { font-size:13px; font-weight:800; color:#fff; letter-spacing:2px; text-transform:uppercase; margin-bottom:24px; padding-bottom:14px; border-bottom:2px solid #e02020; }
+.fr { margin-bottom:18px; }
+.fr label { display:block; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#666; margin-bottom:7px; }
+.fr input,.fr textarea,.fr select { width:100%; background:#1c1c1c; border:1px solid #333; padding:12px 16px; font-size:13px; color:#fff; outline:none; font-family:inherit; }
+.fr input:focus,.fr textarea:focus { border-color:#e02020; }
+.fr textarea { height:100px; resize:vertical; }
+.fr select { cursor:pointer; }
+.fr select option { background:#1c1c1c; }
+.fsub { background:#e02020; color:#fff; border:none; padding:15px 32px; font-size:13px; font-weight:800; cursor:pointer; width:100%; letter-spacing:2px; text-transform:uppercase; margin-top:10px; }
+.cib-band { background:#f5f5f5; padding:56px 40px; border-top:1px solid #eee; }
+.cib-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:32px; }
+.cib-card { background:#fff; border-top:3px solid #e02020; padding:24px 20px; text-align:center; }
+.cib-icon { width:44px; height:44px; background:#e02020; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; }
+.cib-icon i { color:#fff; font-size:20px; }
+.cib-card h3 { font-size:13px; font-weight:700; color:#111; margin-bottom:6px; }
+.cib-card a { font-size:13px; color:#555; font-weight:600; text-decoration:none; display:block; }
+.cib-card a:hover { color:#e02020; }
+.cib-card small { font-size:11px; color:#aaa; display:block; margin-top:4px; }
+
+/* Cookie sáv */
+#cookie-banner {
+  position:fixed; bottom:0; left:0; right:0; z-index:9999;
+  background:rgba(20,20,20,0.97);
+  border-top:3px solid #e02020;
+  padding:18px 40px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:24px; flex-wrap:wrap;
+}
+#cookie-banner p { color:#ccc; font-size:13px; line-height:1.6; max-width:700px; }
+#cookie-banner a { color:#e02020; text-decoration:underline; }
+.cookie-btns { display:flex; gap:12px; flex-shrink:0; }
+.cookie-accept { background:#e02020; color:#fff; border:none; padding:10px 24px; font-size:13px; font-weight:700; cursor:pointer; }
+.cookie-reject { background:transparent; color:#888; border:1px solid #555; padding:10px 24px; font-size:13px; font-weight:600; cursor:pointer; }
+</style>
+</head>
+<body><nav><img src="images/logo.jpg" alt="Brick Field Kft." style="height:90px;width:auto;display:block;mix-blend-mode:multiply;"><ul class="nlinks"><li><a href="index.html" class="">Főoldal</a></li><li><a href="rolunk.html" class="">Rólunk</a></li><li><a href="szolgaltatasok.html" class="">Szolgáltatások</a></li><li><a href="geppark.html" class="">Géppark</a></li><li><a href="referenciak.html" class="">Referenciák</a></li><li><a href="kapcsolat.html" class="active">Kapcsolat</a></li></ul><a href="kapcsolat.html" class="ncta">Ajánlatot kérek</a></nav>
+<div class="page-hero">
+  <div class="page-hero-bars"><div class="pb1"></div><div class="pb2"></div><div class="pb3"></div></div>
+  <div class="sec-lbl">Lépjen velünk kapcsolatba</div>
+  <h1>Kapcsolat & <span>Ajánlatkérés</span></h1>
+  <p>Díjmentes helyszíni felmérés és árajánlat — kötelezettség nélkül.</p>
+</div>
+<section class="contact-main">
+  <div class="cgrid">
+    <div>
+      <div class="sec-lbl">Elérhetőségeink</div>
+      <div class="sec-title">Keressen minket!</div>
+      <div class="ci"><div class="cion"><i class="ti ti-phone"></i></div><div><div class="clbl">Telefon</div><div class="cval"><a href="tel:+36309353793">+36 30 935 3793</a></div><div class="csub">Adamovits Márk — hétköznap 7-18h</div></div></div>
+      <div class="ci"><div class="cion"><i class="ti ti-mail"></i></div><div><div class="clbl">Email</div><div class="cval"><a href="mailto:brickfieldkft@gmail.com">brickfieldkft@gmail.com</a></div><div class="csub">Általában 24 órán belül válaszolunk</div></div></div>
+      <div class="ci"><div class="cion"><i class="ti ti-brand-facebook"></i></div><div><div class="clbl">Facebook</div><div class="cval"><a href="https://www.facebook.com/search/top?q=brick%20field%20-%20%C3%A9p%C3%ADt%C5%91ipari%20kivitelez%C3%A9s" target="_blank">Brick Field — Építőipari Kivitelezés</a></div><div class="csub">Messengeren is elérhet minket</div></div></div>
+      <div class="ci"><div class="cion"><i class="ti ti-map-pin"></i></div><div><div class="clbl">Cím</div><div class="cval"><a href="https://maps.google.com/?q=Érd+Facélia+utca+42" target="_blank">2030 Érd, Facélia utca 42.</a></div><div class="csub">Balaton-felvidék · Pest megye · Budapest</div></div></div>
+      <div class="cmap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2699.5!2d18.9261!3d47.3847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741de5b9e0e0001%3A0x1!2zRmFjw6lsaWEgdXRjYSA0MiwgRXJkLCAyMDMw!5e0!3m2!1shu!2shu!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </div>
+    <div class="cform">
+      <div class="cft">Ajánlatot kérek</div>
+      <div class="fr"><label>Teljes neve *</label><input type="text" id="nev" placeholder="Pl. Kovács János"></div>
+      <div class="fr"><label>Telefonszám *</label><input type="text" id="telefon" placeholder="+36 ..."></div>
+      <div class="fr"><label>Email cím</label><input type="email" id="email" placeholder="email@email.hu"></div>
+      <div class="fr"><label>Munkavégzés helyszíne</label><input type="text" id="helyszin" placeholder="Pl. Budapest XIV. kerület"></div>
+      <div class="fr"><label>Munka típusa</label>
+        <select id="tipus"><option value="">— Válasszon —</option><option>Estrich betonozás</option><option>Gipszkarton szerelés</option><option>Kőműves munkák</option><option>Gépi vakolás</option><option>Gépi festés / glettelés</option><option>Gépi színezés</option><option>Szigetelés / homlokzat</option><option>Térkövezés</option><option>Öntözőrendszer</option><option>Több / egyéb</option></select>
+      </div>
+      <div class="fr"><label>Részletek, megjegyzés</label><textarea id="leiras" placeholder="Írja le röviden a munkát, méretet, határidőt..."></textarea></div>
+      <button class="fsub" onclick="sendMail()">Ajánlatot kérek →</button>
+    </div>
+  </div>
+</section>
+<section class="cib-band">
+  <div style="text-align:center"><div class="sec-lbl" style="display:inline-block">Gyors elérés</div></div>
+  <div style="text-align:center"><div class="sec-title">Több módon is elérhet</div></div>
+  <div class="cib-grid">
+    <div class="cib-card"><div class="cib-icon"><i class="ti ti-phone"></i></div><h3>Telefon</h3><a href="tel:+36309353793">+36 30 935 3793</a><small>Hétköznap 7:00 — 18:00</small></div>
+    <div class="cib-card"><div class="cib-icon"><i class="ti ti-mail"></i></div><h3>Email</h3><a href="mailto:brickfieldkft@gmail.com">brickfieldkft@gmail.com</a><small>24 órán belüli válasz</small></div>
+    <div class="cib-card"><div class="cib-icon"><i class="ti ti-brand-facebook"></i></div><h3>Facebook / Messenger</h3><a href="https://www.facebook.com/search/top?q=brick%20field%20-%20%C3%A9p%C3%ADt%C5%91ipari%20kivitelez%C3%A9s" target="_blank">Brick Field Kft.</a><small>Facebook Messengeren is</small></div>
+  </div>
+</section>
+<script>
+function sendMail(){
+  const nev=document.getElementById('nev').value,telefon=document.getElementById('telefon').value,
+    email=document.getElementById('email').value,helyszin=document.getElementById('helyszin').value,
+    tipus=document.getElementById('tipus').value,leiras=document.getElementById('leiras').value;
+  if(!nev||!telefon){alert('Kérem adja meg a nevét és telefonszámát!');return;}
+  const s=encodeURIComponent('Ajánlatkérés - Brick Field Kft. weboldal');
+  const b=encodeURIComponent('Név: '+nev+'\nTelefon: '+telefon+'\nEmail: '+email+'\nHelyszín: '+helyszin+'\nMunka: '+tipus+'\n\nLeírás:\n'+leiras);
+  window.location.href='mailto:brickfieldkft@gmail.com?subject='+s+'&body='+b;
+}
+</script>
+<footer>
+  <img src="images/logo_transparent.png" alt="Brick Field Kft." style="height:240px;width:auto;display:block;">
+  <div class="footer-info"><strong>BRICK FIELD Kft.</strong><br>2030 Érd, Facélia utca 42.<br>Adószám: 25364570-2-13<br>Cégjegyzékszám: 13 09 239393</div>
+  <div style="font-size:12px;color:#111;font-weight:600;">© 2025 Brick Field Kft.<br>Minden jog fenntartva.</div>
+  <div class="fls"><a href="kapcsolat.html">Kapcsolat</a><a href="#">Adatvédelem</a><a href="https://www.facebook.com/search/top?q=brick%20field%20-%20%C3%A9p%C3%ADt%C5%91ipari%20kivitelez%C3%A9s" target="_blank">Facebook</a></div>
+</footer>
+<div id="cookie-banner">
+  <p>🍪 Ez a weboldal sütiket (cookie-kat) használ a jobb felhasználói élmény érdekében. A sütik segítenek megérteni, hogyan használják látogatóink az oldalt. <a href="#">Adatvédelmi tájékoztató</a></p>
+  <div class="cookie-btns">
+    <button class="cookie-accept" onclick="acceptCookies()">Elfogadom</button>
+    <button class="cookie-reject" onclick="rejectCookies()">Elutasítom</button>
+  </div>
+</div>
+<script>
+function acceptCookies() {
+  localStorage.setItem('cookieConsent', 'accepted');
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+function rejectCookies() {
+  localStorage.setItem('cookieConsent', 'rejected');
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+if (localStorage.getItem('cookieConsent')) {
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+</body>
+</html>
