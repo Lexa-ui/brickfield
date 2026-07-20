@@ -122,9 +122,58 @@ footer {
 .cookie-btns { display:flex; gap:12px; flex-shrink:0; }
 .cookie-accept { background:#e02020; color:#fff; border:none; padding:10px 24px; font-size:13px; font-weight:700; cursor:pointer; }
 .cookie-reject { background:transparent; color:#888; border:1px solid #555; padding:10px 24px; font-size:13px; font-weight:600; cursor:pointer; }
+
+/* ============ MOBIL NÉZET ============ */
+.nav-toggle { display:none; background:none; border:none; cursor:pointer; padding:6px; z-index:110; }
+.nav-toggle i { font-size:26px; color:#111; }
+@media (max-width:900px){
+  nav{ padding:0 20px; height:76px; }
+  nav > img{ height:60px !important; }
+  .nav-toggle{ display:block; }
+  .ncta{ display:none; }
+  .nlinks{
+    position:fixed; top:76px; left:0; right:0;
+    background:#111; flex-direction:column; gap:0;
+    max-height:0; overflow:hidden; transition:max-height .3s ease;
+    z-index:105;
+  }
+  .nlinks.open{ max-height:70vh; overflow-y:auto; }
+  .nlinks li{ width:100%; border-bottom:1px solid #262626; }
+  .nlinks a{ display:block; padding:16px 24px; font-size:13px; color:#fff; }
+
+  .page-hero{ padding:40px 20px; }
+  .page-hero h1{ font-size:24px; }
+  .page-hero p{ font-size:13px; }
+  .page-hero-bars{ width:18%; }
+
+  .sec-title{ font-size:22px; }
+
+  #cookie-banner{ flex-direction:column; align-items:flex-start; padding:16px 20px; }
+  .cookie-btns{ width:100%; }
+  .cookie-accept,.cookie-reject{ flex:1; text-align:center; }
+
+  footer{ flex-direction:column; align-items:flex-start; text-align:left; padding:32px 20px; gap:20px; }
+  footer img{ height:120px !important; }
+
+  .cta-band{ flex-direction:column; align-items:flex-start; text-align:left; padding:40px 20px; }
+}
+@media (max-width:600px){
+  nav > img{ height:50px !important; }
+  .page-hero h1{ font-size:20px; }
+}
+
+@media (max-width:900px){
+  .contact-main{ padding:48px 20px; }
+  .cgrid{ grid-template-columns:1fr; gap:40px; }
+  .cform{ padding:28px 20px; }
+  .cmap iframe{ height:200px; }
+  .cib-band{ padding:40px 20px; }
+  .cib-grid{ grid-template-columns:1fr; gap:16px; margin-top:24px; }
+}
+
 </style>
 </head>
-<body><nav><img src="/brickfield/logo_atlatszo.png" alt="Brick Field Kft." style="height:90px;width:auto;display:block;"><ul class="nlinks"><li><a href="index.html" class="">Főoldal</a></li><li><a href="rolunk.html" class="">Rólunk</a></li><li><a href="szolgaltatasok.html" class="">Szolgáltatások</a></li><li><a href="geppark.html" class="">Géppark</a></li><li><a href="referenciak.html" class="">Referenciák</a></li><li><a href="kapcsolat.html" class="active">Kapcsolat</a></li></ul><a href="kapcsolat.html" class="ncta">Ajánlatot kérek</a></nav>
+<body><nav><img src="/brickfield/logo_atlatszo.png" alt="Brick Field Kft." style="height:90px;width:auto;display:block;"><button class="nav-toggle" onclick="toggleNav()"><i class="ti ti-menu-2"></i></button><ul class="nlinks"><li><a href="index.html" class="">Főoldal</a></li><li><a href="rolunk.html" class="">Rólunk</a></li><li><a href="szolgaltatasok.html" class="">Szolgáltatások</a></li><li><a href="geppark.html" class="">Géppark</a></li><li><a href="referenciak.html" class="">Referenciák</a></li><li><a href="kapcsolat.html" class="active">Kapcsolat</a></li></ul><a href="kapcsolat.html" class="ncta">Ajánlatot kérek</a></nav>
 <div class="page-hero">
   <div class="page-hero-bars"><div class="pb1"></div><div class="pb2"></div><div class="pb3"></div></div>
   <div class="sec-lbl">Lépjen velünk kapcsolatba</div>
@@ -200,6 +249,12 @@ function rejectCookies() {
 }
 if (localStorage.getItem('cookieConsent')) {
   document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+
+<script>
+function toggleNav(){
+  document.querySelector('.nlinks').classList.toggle('open');
 }
 </script>
 </body>
