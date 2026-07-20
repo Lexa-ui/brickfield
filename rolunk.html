@@ -103,7 +103,9 @@ footer {
 .tci a:hover { color:#e02020; }
 .tci-icon { width:34px; height:34px; background:#e02020; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .tci-icon i { color:#fff; font-size:16px; }
-.team-img { aspect-ratio:1/1; width:100%; background-image:url("/brickfield/adamovits_mark.jpg"); background-size:cover; background-position:center; position:relative; border-left:4px solid #e02020; }
+.team-img { aspect-ratio:1/1; width:82%; margin:0 auto; background-image:url("/brickfield/adamovits_mark.jpg"); background-size:cover; background-position:center; position:relative; border-left:4px solid #e02020; }
+.team-img-tag { position:absolute; left:0; right:0; bottom:0; background:linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0) 70%); padding:20px 16px 12px; text-align:center; }
+.team-img-tag span { color:#fff; font-size:13px; font-weight:700; letter-spacing:.5px; }
 
 /* Cookie sáv */
 #cookie-banner {
@@ -124,12 +126,12 @@ footer {
 .nav-toggle { display:none; background:none; border:none; cursor:pointer; padding:6px; z-index:110; }
 .nav-toggle i { font-size:26px; color:#111; }
 @media (max-width:900px){
-  nav{ padding:0 20px; height:112px; }
-  nav > img{ height:98px !important; }
+  nav{ padding:0 20px; height:150px; }
+  nav > img{ height:132px !important; }
   .nav-toggle{ display:block; }
   .ncta{ display:none; }
   .nlinks{
-    position:fixed; top:112px; left:0; right:0;
+    position:fixed; top:150px; left:0; right:0;
     background:#111; flex-direction:column; gap:0;
     max-height:0; overflow:hidden; transition:max-height .3s ease;
     z-index:105;
@@ -155,9 +157,9 @@ footer {
   .cta-band{ flex-direction:column; align-items:flex-start; text-align:left; padding:40px 20px; }
 }
 @media (max-width:600px){
-  nav{ height:98px; }
-  nav > img{ height:84px !important; }
-  .nlinks{ top:98px; }
+  nav{ height:128px; }
+  nav > img{ height:112px !important; }
+  .nlinks{ top:128px; }
   .page-hero h1{ font-size:20px; }
 }
 
@@ -221,7 +223,7 @@ footer {
       <div class="tci"><div class="tci-icon"><i class="ti ti-brand-facebook"></i></div><a href="https://www.facebook.com/search/top?q=brick%20field%20-%20%C3%A9p%C3%ADt%C5%91ipari%20kivitelez%C3%A9s" target="_blank">Facebook oldal</a></div>
       <div class="tci"><div class="tci-icon"><i class="ti ti-map-pin"></i></div><a href="https://maps.google.com/?q=Érd+Facélia+utca+42" target="_blank">2030 Érd, Facélia utca 42.</a></div>
     </div>
-    <div class="team-img"></div>
+    <div class="team-img"><div class="team-img-tag"><span>Adamovits Márk</span></div></div>
   </div>
 </section>
 <div class="cta-band">
