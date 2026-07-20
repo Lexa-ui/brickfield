@@ -14,7 +14,7 @@ body { font-family:"Segoe UI",Arial,sans-serif; color:#1a1a1a; }
 nav {
   position:sticky; top:0; z-index:99;
   display:flex; align-items:center; justify-content:space-between;
-  padding:0 40px; height:96px;
+  padding:0 40px; height:130px;
   border-bottom:3px solid var(--red);
   position:sticky;
   background-image:url("/brickfield/beton.jpg");
@@ -35,7 +35,7 @@ nav {
 footer {
   background-image:url("/brickfield/beton.jpg"); background-size:cover; background-position:center bottom;
   box-shadow:inset 0 0 0 9999px rgba(255,255,255,0.50);
-  padding:40px; display:flex; align-items:center; justify-content:space-between;
+  padding:22px 40px; display:flex; align-items:center; justify-content:space-between;
   border-top:3px solid var(--red); flex-wrap:wrap; gap:24px;
 }
 .fls { display:flex; gap:24px; flex-wrap:wrap; }
@@ -137,8 +137,8 @@ footer {
 .nav-toggle { display:none; background:none; border:none; cursor:pointer; padding:6px; z-index:110; }
 .nav-toggle i { font-size:26px; color:#111; }
 @media (max-width:900px){
-  nav{ padding:0 20px; height:76px; }
-  nav > img{ height:60px !important; }
+  nav{ padding:0 20px; height:96px; }
+  nav > img{ height:76px !important; }
   .nav-toggle{ display:block; }
   .ncta{ display:none; }
   .nlinks{
@@ -162,13 +162,13 @@ footer {
   .cookie-btns{ width:100%; }
   .cookie-accept,.cookie-reject{ flex:1; text-align:center; }
 
-  footer{ flex-direction:column; align-items:flex-start; text-align:left; padding:32px 20px; gap:20px; }
-  footer img{ height:120px !important; }
+  footer{ flex-direction:column; align-items:flex-start; text-align:left; padding:20px 20px; gap:14px; }
+  footer img{ height:64px !important; }
 
   .cta-band{ flex-direction:column; align-items:flex-start; text-align:left; padding:40px 20px; }
 }
 @media (max-width:600px){
-  nav > img{ height:50px !important; }
+  nav > img{ height:64px !important; }
   .page-hero h1{ font-size:20px; }
 }
 
@@ -198,7 +198,7 @@ footer {
 
 </style>
 </head>
-<body><nav><img src="/brickfield/logo_atlatszo.png" alt="Brick Field Kft." style="height:90px;width:auto;display:block;"><button class="nav-toggle" onclick="toggleNav()"><i class="ti ti-menu-2"></i></button><ul class="nlinks"><li><a href="index.html" class="active">Főoldal</a></li><li><a href="rolunk.html" class="">Rólunk</a></li><li><a href="szolgaltatasok.html" class="">Szolgáltatások</a></li><li><a href="geppark.html" class="">Géppark</a></li><li><a href="referenciak.html" class="">Referenciák</a></li><li><a href="kapcsolat.html" class="">Kapcsolat</a></li></ul><a href="kapcsolat.html" class="ncta">Ajánlatot kérek</a></nav>
+<body><nav><img src="/brickfield/logo_atlatszo.png" alt="Brick Field Kft." style="height:120px;width:auto;display:block;"><button class="nav-toggle" onclick="toggleNav()"><i class="ti ti-menu-2"></i></button><ul class="nlinks"><li><a href="index.html" class="active">Főoldal</a></li><li><a href="rolunk.html" class="">Rólunk</a></li><li><a href="szolgaltatasok.html" class="">Szolgáltatások</a></li><li><a href="geppark.html" class="">Géppark</a></li><li><a href="referenciak.html" class="">Referenciák</a></li><li><a href="kapcsolat.html" class="">Kapcsolat</a></li></ul><a href="kapcsolat.html" class="ncta">Ajánlatot kérek</a></nav>
 <div class="hero">
   <div class="hero-concrete"></div>
   <div class="hero-logo-bg"><img src="/brickfield/logo_atlatszo.png" alt="" style="width:340px;height:auto;display:block;"></div>
@@ -256,7 +256,7 @@ footer {
   <div style="margin-top:32px;text-align:center"><a href="referenciak.html" class="btn-red">Összes referencia →</a></div>
 </section>
 <footer>
-  <img src="/brickfield/logo_atlatszo.png" alt="Brick Field Kft." style="height:240px;width:auto;display:block;">
+  <img src="/brickfield/logo_atlatszo.png" alt="Brick Field Kft." style="height:90px;width:auto;display:block;">
   <div class="footer-info"><strong>BRICK FIELD Kft.</strong><br>2030 Érd, Facélia utca 42.<br>Adószám: 25364570-2-13<br>Cégjegyzékszám: 13 09 239393</div>
   <div style="font-size:12px;color:#111;font-weight:600;">© 2025 Brick Field Kft.<br>Minden jog fenntartva.</div>
   <div class="fls"><a href="kapcsolat.html">Kapcsolat</a><a href="#">Adatvédelem</a><a href="https://www.facebook.com/search/top?q=brick%20field%20-%20%C3%A9p%C3%ADt%C5%91ipari%20kivitelez%C3%A9s" target="_blank">Facebook</a></div>
