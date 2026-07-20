@@ -8,16 +8,16 @@
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:"Segoe UI",Arial,sans-serif; color:#1a1a1a; }
-:root { --cbg: url("/brickfield/images/beton.jpg"); --red: #e02020; }
+:root { --cbg: url("/brickfield/beton.jpg"); --red: #e02020; }
 
 /* NAV: beton háttér világosabban */
 nav {
   position:sticky; top:0; z-index:99;
   display:flex; align-items:center; justify-content:space-between;
-  padding:0 40px; height:96px;
+  padding:0 40px; height:130px;
   border-bottom:3px solid var(--red);
   position:sticky;
-  background-image:url("/brickfield/images/beton.jpg");
+  background-image:url("/brickfield/beton.jpg");
   background-size:cover;
   background-position:center top;
   /* Fehér réteg a beton felett = világosabb hatás */
@@ -33,9 +33,9 @@ nav {
 .sec-title.white { color:#fff; }
 
 footer {
-  background-image:url("/brickfield/images/beton.jpg"); background-size:cover; background-position:center bottom;
+  background-image:url("/brickfield/beton.jpg"); background-size:cover; background-position:center bottom;
   box-shadow:inset 0 0 0 9999px rgba(255,255,255,0.50);
-  padding:40px; display:flex; align-items:center; justify-content:space-between;
+  padding:22px 40px; display:flex; align-items:center; justify-content:space-between;
   border-top:3px solid var(--red); flex-wrap:wrap; gap:24px;
 }
 .fls { display:flex; gap:24px; flex-wrap:wrap; }
@@ -67,7 +67,7 @@ footer {
 /* Beton szekciók: világos beton, enyhe fehér overlay, fehér kártyák */
 .concrete-section {
   padding:72px 40px;
-  background-image:url("/brickfield/images/beton.jpg");
+  background-image:url("/brickfield/beton.jpg");
   background-size:cover;
   background-position:center;
   box-shadow:inset 0 0 0 9999px rgba(255,255,255,0.15);
@@ -87,9 +87,7 @@ footer {
 .elony-card p { font-size:12px; color:#666; line-height:1.6; }
 .gepek-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:38px; }
 .gep-card { border:1px solid #bbb; border-top:3px solid #e02020; background:rgba(255,255,255,.92); overflow:hidden; }
-.gep-img { height:180px; background:#c5c5c0; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px; }
-.gep-img i { font-size:48px; color:#999; }
-.gep-img span { font-size:11px; color:#aaa; }
+.gep-img { height:180px; background-size:cover; background-position:center; }
 .gep-body { padding:20px 18px; }
 .gep-body h3 { font-size:15px; font-weight:700; color:#111; margin-bottom:8px; }
 .gep-body p { font-size:13px; color:#555; line-height:1.7; }
@@ -97,7 +95,7 @@ footer {
 .allvany { padding:72px 40px; background:#111; }
 .allvany .sec-title { color:#fff; }
 .allvany-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; margin-top:40px; }
-.allvany-img { height:300px; background-image:url("/brickfield/images/beton.jpg"); background-size:cover; background-position:center; position:relative; border-left:4px solid #e02020; display:flex; align-items:center; justify-content:center; }
+.allvany-img { height:300px; background-image:url("/brickfield/beton.jpg"); background-size:cover; background-position:center; position:relative; border-left:4px solid #e02020; display:flex; align-items:center; justify-content:center; }
 .allvany-img-ov { position:absolute; inset:0; background:rgba(0,0,0,.15); }
 .allvany-img span { color:#ccc; font-size:13px; position:relative; z-index:2; }
 .allvany-text p { font-size:14px; color:#aaa; line-height:1.8; margin-bottom:14px; }
@@ -121,9 +119,65 @@ footer {
 .cookie-btns { display:flex; gap:12px; flex-shrink:0; }
 .cookie-accept { background:#e02020; color:#fff; border:none; padding:10px 24px; font-size:13px; font-weight:700; cursor:pointer; }
 .cookie-reject { background:transparent; color:#888; border:1px solid #555; padding:10px 24px; font-size:13px; font-weight:600; cursor:pointer; }
+
+/* ============ MOBIL NÉZET ============ */
+.nav-toggle { display:none; background:none; border:none; cursor:pointer; padding:6px; z-index:110; }
+.nav-toggle i { font-size:26px; color:#111; }
+@media (max-width:900px){
+  nav{ padding:0 20px; height:96px; }
+  nav > img{ height:76px !important; }
+  .nav-toggle{ display:block; }
+  .ncta{ display:none; }
+  .nlinks{
+    position:fixed; top:96px; left:0; right:0;
+    background:#111; flex-direction:column; gap:0;
+    max-height:0; overflow:hidden; transition:max-height .3s ease;
+    z-index:105;
+  }
+  .nlinks.open{ max-height:70vh; overflow-y:auto; }
+  .nlinks li{ width:100%; border-bottom:1px solid #262626; }
+  .nlinks a{ display:block; padding:16px 24px; font-size:13px; color:#fff; }
+
+  .page-hero{ padding:40px 20px; }
+  .page-hero h1{ font-size:24px; }
+  .page-hero p{ font-size:13px; }
+  .page-hero-bars{ width:18%; }
+
+  .sec-title{ font-size:22px; }
+
+  #cookie-banner{ flex-direction:column; align-items:flex-start; padding:16px 20px; }
+  .cookie-btns{ width:100%; }
+  .cookie-accept,.cookie-reject{ flex:1; text-align:center; }
+
+  footer{ flex-direction:column; align-items:flex-start; text-align:left; padding:20px 20px; gap:14px; }
+  footer img{ height:64px !important; }
+
+  .cta-band{ flex-direction:column; align-items:flex-start; text-align:left; padding:40px 20px; }
+}
+@media (max-width:600px){
+  nav > img{ height:64px !important; }
+  .page-hero h1{ font-size:20px; }
+}
+
+@media (max-width:900px){
+  .gep-intro{ padding:48px 20px; }
+  .gep-intro-grid{ grid-template-columns:1fr; gap:32px; }
+  .elony-grid{ grid-template-columns:1fr; gap:14px; }
+  .concrete-section{ padding:48px 20px; }
+  .gepek-grid{ grid-template-columns:repeat(2,1fr); gap:16px; }
+  .allvany{ padding:48px 20px; }
+  .allvany-grid{ grid-template-columns:1fr; gap:28px; }
+  .allvany-img{ height:220px; }
+  .allvany-stat{ gap:24px; }
+  .astat-num{ font-size:28px; }
+}
+@media (max-width:600px){
+  .gepek-grid{ grid-template-columns:1fr; }
+}
+
 </style>
 </head>
-<body><nav><img src="/brickfield/images/logo_transparent.png" alt="Brick Field Kft." style="height:90px;width:auto;display:block;"><ul class="nlinks"><li><a href="index.html" class="">Főoldal</a></li><li><a href="rolunk.html" class="">Rólunk</a></li><li><a href="szolgaltatasok.html" class="">Szolgáltatások</a></li><li><a href="geppark.html" class="active">Géppark</a></li><li><a href="referenciak.html" class="">Referenciák</a></li><li><a href="kapcsolat.html" class="">Kapcsolat</a></li></ul><a href="kapcsolat.html" class="ncta">Ajánlatot kérek</a></nav>
+<body><nav><img src="/brickfield/logo_atlatszo.png" alt="Brick Field Kft." style="height:120px;width:auto;display:block;"><button class="nav-toggle" onclick="toggleNav()"><i class="ti ti-menu-2"></i></button><ul class="nlinks"><li><a href="index.html" class="">Főoldal</a></li><li><a href="rolunk.html" class="">Rólunk</a></li><li><a href="szolgaltatasok.html" class="">Szolgáltatások</a></li><li><a href="geppark.html" class="active">Géppark</a></li><li><a href="referenciak.html" class="">Referenciák</a></li><li><a href="kapcsolat.html" class="">Kapcsolat</a></li></ul><a href="kapcsolat.html" class="ncta">Ajánlatot kérek</a></nav>
 <div class="page-hero">
   <div class="page-hero-bars"><div class="pb1"></div><div class="pb2"></div><div class="pb3"></div></div>
   <div class="sec-lbl">Felszereltségünk</div>
@@ -150,12 +204,12 @@ footer {
   <div class="sec-lbl">Gépeink</div>
   <div class="sec-title">Géppark</div>
   <div class="gepek-grid">
-    <div class="gep-card"><div class="gep-img"><i class="ti ti-box"></i><span>[ Fotó hamarosan ]</span></div><div class="gep-body"><h3>Esztrich gép</h3><p>Nagy teljesítményű gépi esztrich kivitelezéshez, nagy felületeken is.</p><span class="gep-tag">Betonozás</span></div></div>
-    <div class="gep-card"><div class="gep-img"><i class="ti ti-spray"></i><span>[ Fotó hamarosan ]</span></div><div class="gep-body"><h3>Gépi vakológép</h3><p>Folyamatos gépi vakoláshoz — egyenletes felület, kevesebb munkaidő.</p><span class="gep-tag">Vakolás</span></div></div>
-    <div class="gep-card"><div class="gep-img"><i class="ti ti-paint"></i><span>[ Fotó hamarosan ]</span></div><div class="gep-body"><h3>Gépi festékszóró</h3><p>Ipari gépi festés és glettelés nagy felületeken, profi eredmény.</p><span class="gep-tag">Festés</span></div></div>
-    <div class="gep-card"><div class="gep-img"><i class="ti ti-color-swatch"></i><span>[ Fotó hamarosan ]</span></div><div class="gep-body"><h3>Gépi színező berendezés</h3><p>Homlokzati és belső gépi színezéshez, tartós bevonat.</p><span class="gep-tag">Színezés</span></div></div>
-    <div class="gep-card"><div class="gep-img"><i class="ti ti-augmented-reality"></i><span>[ Fotó hamarosan ]</span></div><div class="gep-body"><h3>Glettelőgép</h3><p>Gépi glettelés — tökéletesen sima alapfelület töredék idő alatt.</p><span class="gep-tag">Glettelés</span></div></div>
-    <div class="gep-card"><div class="gep-img"><i class="ti ti-tool"></i><span>[ Fotó hamarosan ]</span></div><div class="gep-body"><h3>Egyéb eszközök</h3><p>Teljes eszközpark kőműves, burkoló és térkövező munkákhoz.</p><span class="gep-tag">Vegyes</span></div></div>
+    <div class="gep-card"><div class="gep-img" style="background-image:url('/brickfield/gep_esztrich.jpg')"></div><div class="gep-body"><h3>Esztrich gép</h3><p>Nagy teljesítményű gépi esztrich kivitelezéshez, nagy felületeken is.</p><span class="gep-tag">Betonozás</span></div></div>
+    <div class="gep-card"><div class="gep-img" style="background-image:url('/brickfield/gep_vakolo.jpg')"></div><div class="gep-body"><h3>Gépi vakológép</h3><p>Folyamatos gépi vakoláshoz — egyenletes felület, kevesebb munkaidő.</p><span class="gep-tag">Vakolás</span></div></div>
+    <div class="gep-card"><div class="gep-img" style="background-image:url('/brickfield/gep_festekszoro.jpg')"></div><div class="gep-body"><h3>Gépi festékszóró</h3><p>Ipari gépi festés és glettelés nagy felületeken, profi eredmény.</p><span class="gep-tag">Festés</span></div></div>
+    <div class="gep-card"><div class="gep-img" style="background-image:url('/brickfield/gep_szinezo.jpg')"></div><div class="gep-body"><h3>Gépi színező berendezés</h3><p>Homlokzati és belső gépi színezéshez, tartós bevonat.</p><span class="gep-tag">Színezés</span></div></div>
+    <div class="gep-card"><div class="gep-img" style="background-image:url('/brickfield/gep_glettelo.jpg')"></div><div class="gep-body"><h3>Glettelőgép</h3><p>Gépi glettelés — tökéletesen sima alapfelület töredék idő alatt.</p><span class="gep-tag">Glettelés</span></div></div>
+    <div class="gep-card"><div class="gep-img" style="background-image:url('/brickfield/gep_egyeb.jpg')"></div><div class="gep-body"><h3>Egyéb eszközök</h3><p>Teljes eszközpark kőműves, burkoló és térkövező munkákhoz.</p><span class="gep-tag">Vegyes</span></div></div>
   </div>
 </section>
 <section class="allvany">
@@ -183,7 +237,7 @@ footer {
   <a href="kapcsolat.html" class="btn-white">Ajánlatot kérek →</a>
 </div>
 <footer>
-  <img src="/brickfield/images/logo_transparent.png" alt="Brick Field Kft." style="height:240px;width:auto;display:block;">
+  <img src="/brickfield/logo_atlatszo.png" alt="Brick Field Kft." style="height:90px;width:auto;display:block;">
   <div class="footer-info"><strong>BRICK FIELD Kft.</strong><br>2030 Érd, Facélia utca 42.<br>Adószám: 25364570-2-13<br>Cégjegyzékszám: 13 09 239393</div>
   <div style="font-size:12px;color:#111;font-weight:600;">© 2025 Brick Field Kft.<br>Minden jog fenntartva.</div>
   <div class="fls"><a href="kapcsolat.html">Kapcsolat</a><a href="#">Adatvédelem</a><a href="https://www.facebook.com/search/top?q=brick%20field%20-%20%C3%A9p%C3%ADt%C5%91ipari%20kivitelez%C3%A9s" target="_blank">Facebook</a></div>
@@ -206,6 +260,12 @@ function rejectCookies() {
 }
 if (localStorage.getItem('cookieConsent')) {
   document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+
+<script>
+function toggleNav(){
+  document.querySelector('.nlinks').classList.toggle('open');
 }
 </script>
 </body>
