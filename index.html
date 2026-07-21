@@ -72,8 +72,10 @@ footer {
   background-position:center;
   box-shadow:inset 0 0 0 9999px rgba(255,255,255,0.15);
 }
-.card-white { border:1px solid #bbb; border-top:3px solid var(--red); padding:26px 22px; background:rgba(255,255,255,.92); }
-.card-icon { width:42px; height:42px; background:var(--red); display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+.card-white { border:1px solid #bbb; border-top:3px solid var(--red); background:rgba(255,255,255,.92); overflow:hidden; }
+.svc-img { height:110px; background-size:cover; background-position:center; }
+.svc-body { padding:16px 16px 18px; }
+.card-icon { width:34px; height:34px; background:var(--red); display:flex; align-items:center; justify-content:center; margin-bottom:10px; }
 .card-icon i { color:#fff; font-size:20px; }
 
 .hero { position:relative; min-height:520px; display:flex; align-items:center; padding:80px 40px 64px; overflow:hidden; background:#1e1e1e; }
@@ -196,7 +198,8 @@ footer {
   .concrete-section{ padding:36px 20px; }
   .sec-title{ margin-bottom:8px; }
   .serv-grid{ grid-template-columns:repeat(2,1fr); gap:10px; margin-top:20px; }
-  .card-white{ padding:14px 12px; }
+  .svc-img{ height:90px; }
+  .svc-body{ padding:12px 12px 14px; }
   .card-icon{ width:32px; height:32px; margin-bottom:8px; }
   .card-icon i{ font-size:15px; }
   .dark-cta{ padding:48px 20px; flex-direction:column; align-items:flex-start; }
@@ -243,12 +246,12 @@ footer {
   <div class="sec-lbl">Szolgáltatásaink</div>
   <div class="sec-title">Mit vállalunk?</div>
   <div class="serv-grid">
-    <div class="card-white"><div class="card-icon"><i class="ti ti-layers-intersect"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Estrich betonozás</h3><p style="font-size:12px;color:#444;line-height:1.6;">Gépi és kézi kivitelezés.</p></div>
-    <div class="card-white"><div class="card-icon"><i class="ti ti-layout-board"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Gipszkarton</h3><p style="font-size:12px;color:#444;line-height:1.6;">Válaszfalak, álmennyezetek.</p></div>
-    <div class="card-white"><div class="card-icon"><i class="ti ti-building"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Kőműves munkák</h3><p style="font-size:12px;color:#444;line-height:1.6;">Falazás, burkolás, vakolás.</p></div>
-    <div class="card-white"><div class="card-icon"><i class="ti ti-paint"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Gépi festés</h3><p style="font-size:12px;color:#444;line-height:1.6;">Ipari gépi festés, glettelés.</p></div>
-    <div class="card-white"><div class="card-icon"><i class="ti ti-home"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Homlokzat</h3><p style="font-size:12px;color:#444;line-height:1.6;">Szigetelés, állványozás 1500nm.</p></div>
-    <div class="card-white"><div class="card-icon"><i class="ti ti-road"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Térkövezés</h3><p style="font-size:12px;color:#444;line-height:1.6;">Járdák, teraszok, parkolók.</p></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_beton.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-layers-intersect"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Estrich betonozás</h3><p style="font-size:12px;color:#444;line-height:1.6;">Gépi és kézi kivitelezés.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_gipszkarton.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-layout-board"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Gipszkarton</h3><p style="font-size:12px;color:#444;line-height:1.6;">Válaszfalak, álmennyezetek.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_komuves.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-building"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Kőműves munkák</h3><p style="font-size:12px;color:#444;line-height:1.6;">Falazás, burkolás, vakolás.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_festes.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-paint"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Gépi festés</h3><p style="font-size:12px;color:#444;line-height:1.6;">Ipari gépi festés, glettelés.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_szigeteles.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-home"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Homlokzat</h3><p style="font-size:12px;color:#444;line-height:1.6;">Szigetelés, állványozás 1500nm.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_terkovezes.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-road"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Térkövezés</h3><p style="font-size:12px;color:#444;line-height:1.6;">Járdák, teraszok, parkolók.</p></div></div>
   </div>
   <div style="margin-top:36px;text-align:center"><a href="szolgaltatasok.html" class="btn-red">Összes szolgáltatás →</a></div>
 </section>
