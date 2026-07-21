@@ -73,7 +73,8 @@ footer {
   box-shadow:inset 0 0 0 9999px rgba(255,255,255,0.15);
 }
 .card-white { border:1px solid #bbb; border-top:3px solid var(--red); background:rgba(255,255,255,.92); overflow:hidden; }
-.svc-img { aspect-ratio:16/9; background-size:cover; background-position:center; }
+.svc-img { aspect-ratio:16/9; background-size:cover; background-position:center; transition:background-size .35s ease; }
+.card-white:hover .svc-img { background-size:115%; }
 .svc-body { padding:16px 16px 18px; }
 .card-icon { width:34px; height:34px; background:var(--red); display:flex; align-items:center; justify-content:center; margin-bottom:10px; }
 .card-icon i { color:#fff; font-size:20px; }
@@ -112,7 +113,8 @@ footer {
 .ref-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:36px; }
 .r-card { border:1px solid #222; background:#141414; overflow:hidden; text-decoration:none; display:block; transition:border-color .2s; }
 .r-card:hover { border-color:#e02020; }
-.r-img { height:130px; background-size:cover; background-position:center; position:relative; }
+.r-img { height:130px; background-size:cover; background-position:center; position:relative; transition:background-size .35s ease; }
+.r-card:hover .r-img { background-size:115%; }
 .r-img-ov { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.35), rgba(0,0,0,0) 60%); }
 .r-body { padding:14px 16px; }
 .r-body h4 { font-size:13px; font-weight:700; color:#fff; margin-bottom:3px; }

@@ -78,7 +78,8 @@ footer {
 
 .about-main { padding:72px 40px; background:#fff; }
 .agrid { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
-.aimg { height:320px; position:relative; overflow:hidden; border-left:4px solid #e02020; background-image:url("/brickfield/rolunk_about.jpg"); background-size:cover; background-position:center; }
+.aimg { height:320px; position:relative; overflow:hidden; border-left:4px solid #e02020; background-image:url("/brickfield/rolunk_about.jpg"); background-size:cover; background-position:center; transition:background-size .35s ease; }
+.aimg:hover { background-size:115%; }
 .aimg-ov { position:absolute; inset:0; background:linear-gradient(135deg, rgba(17,17,17,.18), rgba(224,32,32,.12)); }
 .about-main p { font-size:14px; color:#555; line-height:1.8; margin-bottom:14px; }
 .chips { display:flex; gap:10px; margin-top:22px; flex-wrap:wrap; }
@@ -102,7 +103,8 @@ footer {
 .tci a:hover { color:#e02020; }
 .tci-icon { width:34px; height:34px; background:#e02020; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .tci-icon i { color:#fff; font-size:16px; }
-.team-img { aspect-ratio:1/1; width:58%; margin:0 auto; background-image:url("/brickfield/adamovits_mark.jpg"); background-size:cover; background-position:center; position:relative; border-left:4px solid #e02020; }
+.team-img { aspect-ratio:1/1; width:58%; margin:0 auto; background-image:url("/brickfield/adamovits_mark.jpg"); background-size:cover; background-position:center; position:relative; border-left:4px solid #e02020; overflow:hidden; transition:background-size .35s ease; }
+.team-img:hover { background-size:115%; }
 .team-img-tag { position:absolute; left:0; right:0; bottom:0; background:linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0) 70%); padding:20px 16px 12px; text-align:center; }
 .team-img-tag span { color:#fff; font-size:13px; font-weight:700; letter-spacing:.5px; }
 
