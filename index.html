@@ -112,9 +112,8 @@ footer {
 .ref-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:36px; }
 .r-card { border:1px solid #222; background:#141414; overflow:hidden; text-decoration:none; display:block; transition:border-color .2s; }
 .r-card:hover { border-color:#e02020; }
-.r-img { height:130px; background-image:url("/brickfield/beton.jpg"); background-size:cover; background-position:center; position:relative; display:flex; align-items:center; justify-content:center; }
-.r-img-ov { position:absolute; inset:0; background:rgba(0,0,0,.45); }
-.r-img span { position:relative; z-index:2; color:#ccc; font-size:12px; }
+.r-img { height:130px; background-size:cover; background-position:center; position:relative; }
+.r-img-ov { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.35), rgba(0,0,0,0) 60%); }
 .r-body { padding:14px 16px; }
 .r-body h4 { font-size:13px; font-weight:700; color:#fff; margin-bottom:3px; }
 .r-body p { font-size:11px; color:#666; }
@@ -262,9 +261,9 @@ footer {
   <div class="sec-lbl">Referenciák</div>
   <div class="sec-title white">Néhány elvégzett munkánk</div>
   <div class="ref-grid">
-    <a href="referenciak.html" class="r-card"><div class="r-img"><div class="r-img-ov"></div><span>[ Fotó ]</span></div><div class="r-body"><h4>Lakóépület homlokzat</h4><p>Budapest, 2024</p><div class="rtag">Homlokzat</div></div></a>
-    <a href="referenciak.html" class="r-card"><div class="r-img"><div class="r-img-ov"></div><span>[ Fotó ]</span></div><div class="r-body"><h4>Ipari csarnok esztrich</h4><p>Pest megye, 2024</p><div class="rtag">Betonozás</div></div></a>
-    <a href="referenciak.html" class="r-card"><div class="r-img"><div class="r-img-ov"></div><span>[ Fotó ]</span></div><div class="r-body"><h4>Térkövezés, kerti munkák</h4><p>Balaton-felvidék, 2023</p><div class="rtag">Kültér</div></div></a>
+    <a href="referenciak.html" class="r-card"><div class="r-img" style="background-image:url('/brickfield/svc_szigeteles.jpg')"><div class="r-img-ov"></div></div><div class="r-body"><h4>Lakóépület homlokzat</h4><p>Budapest, 2024</p><div class="rtag">Homlokzat</div></div></a>
+    <a href="referenciak.html" class="r-card"><div class="r-img" style="background-image:url('/brickfield/gep_esztrich.jpg')"><div class="r-img-ov"></div></div><div class="r-body"><h4>Ipari csarnok esztrich</h4><p>Pest megye, 2024</p><div class="rtag">Betonozás</div></div></a>
+    <a href="referenciak.html" class="r-card"><div class="r-img" style="background-image:url('/brickfield/svc_terkovezes.jpg')"><div class="r-img-ov"></div></div><div class="r-body"><h4>Térkövezés, kerti munkák</h4><p>Balaton-felvidék, 2023</p><div class="rtag">Kültér</div></div></a>
   </div>
   <div style="margin-top:32px;text-align:center"><a href="referenciak.html" class="btn-red">Összes referencia →</a></div>
 </section>
