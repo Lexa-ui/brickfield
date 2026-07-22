@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brick Field Kft. — Rólunk</title>
+<link rel="icon" type="image/x-icon" href="/brickfield/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/brickfield/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/brickfield/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/brickfield/apple-touch-icon.png">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -80,6 +85,7 @@ footer {
 .agrid { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
 .aimg { height:320px; position:relative; overflow:hidden; border-left:4px solid #e02020; background-image:url("/brickfield/rolunk_about.jpg"); background-size:cover; background-position:center; transition:background-size .35s ease; }
 .aimg:hover { background-size:115%; }
+.aimg { cursor:zoom-in; }
 .aimg-ov { position:absolute; inset:0; background:linear-gradient(135deg, rgba(17,17,17,.18), rgba(224,32,32,.12)); }
 .about-main p { font-size:14px; color:#555; line-height:1.8; margin-bottom:14px; }
 .chips { display:flex; gap:10px; margin-top:22px; flex-wrap:wrap; }
@@ -105,6 +111,7 @@ footer {
 .tci-icon i { color:#fff; font-size:16px; }
 .team-img { aspect-ratio:1/1; width:58%; margin:0 auto; background-image:url("/brickfield/adamovits_mark.jpg"); background-size:cover; background-position:center; position:relative; border-left:4px solid #e02020; overflow:hidden; transition:background-size .35s ease; }
 .team-img:hover { background-size:115%; }
+.team-img { cursor:zoom-in; }
 .team-img-tag { position:absolute; left:0; right:0; bottom:0; background:linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0) 70%); padding:20px 16px 12px; text-align:center; }
 .team-img-tag span { color:#fff; font-size:13px; font-weight:700; letter-spacing:.5px; }
 
@@ -178,6 +185,11 @@ footer {
   .val-grid{ grid-template-columns:1fr; }
 }
 
+
+#lightbox { display:none; position:fixed; inset:0; background:rgba(10,10,10,.94); z-index:9998; align-items:center; justify-content:center; padding:40px; cursor:zoom-out; }
+#lightbox.open { display:flex; }
+#lightbox img { max-width:90%; max-height:90%; box-shadow:0 20px 60px rgba(0,0,0,.6); }
+#lightbox-close { position:absolute; top:20px; right:28px; color:#fff; font-size:34px; line-height:1; cursor:pointer; background:none; border:none; }
 </style>
 </head>
 <body><nav><img src="/brickfield/logo_atlatszo.png" alt="Brick Field Kft." style="height:120px;width:auto;display:block;"><button class="nav-toggle" onclick="toggleNav()"><i class="ti ti-menu-2"></i></button><ul class="nlinks"><li><a href="index.html" class="">Főoldal</a></li><li><a href="rolunk.html" class="active">Rólunk</a></li><li><a href="szolgaltatasok.html" class="">Szolgáltatások</a></li><li><a href="geppark.html" class="">Géppark</a></li><li><a href="referenciak.html" class="">Referenciák</a></li><li><a href="kapcsolat.html" class="">Kapcsolat</a></li></ul><a href="kapcsolat.html" class="ncta">Ajánlatot kérek</a></nav>
@@ -189,7 +201,7 @@ footer {
 </div>
 <section class="about-main">
   <div class="agrid">
-    <div class="aimg"><div class="aimg-ov"></div></div>
+    <div class="aimg" onclick="openLightbox('/brickfield/rolunk_about.jpg','Brick Field Kft.')"><div class="aimg-ov"></div></div>
     <div>
       <div class="sec-lbl">A cégről</div>
       <div class="sec-title">Kik vagyunk?</div>
@@ -224,7 +236,7 @@ footer {
       <div class="tci"><div class="tci-icon"><i class="ti ti-brand-facebook"></i></div><a href="https://www.facebook.com/search/top?q=brick%20field%20-%20%C3%A9p%C3%ADt%C5%91ipari%20kivitelez%C3%A9s" target="_blank">Facebook oldal</a></div>
       <div class="tci"><div class="tci-icon"><i class="ti ti-map-pin"></i></div><a href="https://maps.google.com/?q=Érd+Facélia+utca+42" target="_blank">2030 Érd, Facélia utca 42.</a></div>
     </div>
-    <div class="team-img"><div class="team-img-tag"><span>Adamovits Márk</span></div></div>
+    <div class="team-img" onclick="openLightbox('/brickfield/adamovits_mark.jpg','Adamovits Márk')"><div class="team-img-tag"><span>Adamovits Márk</span></div></div>
   </div>
 </section>
 <div class="cta-band">
@@ -261,6 +273,21 @@ if (localStorage.getItem('cookieConsent')) {
 <script>
 function toggleNav(){
   document.querySelector('.nlinks').classList.toggle('open');
+}
+</script>
+
+<div id="lightbox" onclick="closeLightbox()">
+  <button id="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+function openLightbox(src, alt){
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-img').alt = alt || '';
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
 }
 </script>
 </body>

@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brick Field Kft. — Főoldal</title>
+<link rel="icon" type="image/x-icon" href="/brickfield/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/brickfield/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/brickfield/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/brickfield/apple-touch-icon.png">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -73,7 +78,7 @@ footer {
   box-shadow:inset 0 0 0 9999px rgba(255,255,255,0.15);
 }
 .card-white { border:1px solid #bbb; border-top:3px solid var(--red); background:rgba(255,255,255,.92); overflow:hidden; }
-.svc-img { aspect-ratio:16/9; background-size:cover; background-position:center; transition:background-size .35s ease; }
+.svc-img { aspect-ratio:16/9; background-size:cover; background-position:center; transition:background-size .35s ease; cursor:zoom-in; }
 .card-white:hover .svc-img { background-size:115%; }
 .svc-body { padding:16px 16px 18px; }
 .card-icon { width:34px; height:34px; background:var(--red); display:flex; align-items:center; justify-content:center; margin-bottom:10px; }
@@ -113,7 +118,7 @@ footer {
 .ref-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:36px; }
 .r-card { border:1px solid #222; background:#141414; overflow:hidden; text-decoration:none; display:block; transition:border-color .2s; }
 .r-card:hover { border-color:#e02020; }
-.r-img { height:130px; background-size:cover; background-position:center; position:relative; transition:background-size .35s ease; }
+.r-img { height:130px; background-size:cover; background-position:center; position:relative; transition:background-size .35s ease; cursor:zoom-in; }
 .r-card:hover .r-img { background-size:115%; }
 .r-img-ov { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.35), rgba(0,0,0,0) 60%); }
 .r-body { padding:14px 16px; }
@@ -210,6 +215,11 @@ footer {
   .serv-grid{ grid-template-columns:repeat(2,1fr); }
 }
 
+
+#lightbox { display:none; position:fixed; inset:0; background:rgba(10,10,10,.94); z-index:9998; align-items:center; justify-content:center; padding:40px; cursor:zoom-out; }
+#lightbox.open { display:flex; }
+#lightbox img { max-width:90%; max-height:90%; box-shadow:0 20px 60px rgba(0,0,0,.6); }
+#lightbox-close { position:absolute; top:20px; right:28px; color:#fff; font-size:34px; line-height:1; cursor:pointer; background:none; border:none; }
 </style>
 </head>
 <body><nav><img src="/brickfield/logo_atlatszo.png" alt="Brick Field Kft." style="height:120px;width:auto;display:block;"><button class="nav-toggle" onclick="toggleNav()"><i class="ti ti-menu-2"></i></button><ul class="nlinks"><li><a href="index.html" class="active">Főoldal</a></li><li><a href="rolunk.html" class="">Rólunk</a></li><li><a href="szolgaltatasok.html" class="">Szolgáltatások</a></li><li><a href="geppark.html" class="">Géppark</a></li><li><a href="referenciak.html" class="">Referenciák</a></li><li><a href="kapcsolat.html" class="">Kapcsolat</a></li></ul><a href="kapcsolat.html" class="ncta">Ajánlatot kérek</a></nav>
@@ -246,12 +256,12 @@ footer {
   <div class="sec-lbl">Szolgáltatásaink</div>
   <div class="sec-title">Mit vállalunk?</div>
   <div class="serv-grid">
-    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_beton.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-layers-intersect"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Estrich betonozás</h3><p style="font-size:12px;color:#444;line-height:1.6;">Gépi és kézi kivitelezés.</p></div></div>
-    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_gipszkarton.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-layout-board"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Gipszkarton</h3><p style="font-size:12px;color:#444;line-height:1.6;">Válaszfalak, álmennyezetek.</p></div></div>
-    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_komuves.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-building"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Kőműves munkák</h3><p style="font-size:12px;color:#444;line-height:1.6;">Falazás, burkolás, vakolás.</p></div></div>
-    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_festes.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-paint"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Gépi festés</h3><p style="font-size:12px;color:#444;line-height:1.6;">Ipari gépi festés, glettelés.</p></div></div>
-    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_szigeteles.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-home"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Homlokzat</h3><p style="font-size:12px;color:#444;line-height:1.6;">Szigetelés, állványozás 1500nm.</p></div></div>
-    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_terkovezes.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-road"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Térkövezés</h3><p style="font-size:12px;color:#444;line-height:1.6;">Járdák, teraszok, parkolók.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_beton.jpg')" onclick="openLightbox('/brickfield/svc_beton.jpg','Estrich betonozás')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-layers-intersect"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Estrich betonozás</h3><p style="font-size:12px;color:#444;line-height:1.6;">Gépi és kézi kivitelezés.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_gipszkarton.jpg')" onclick="openLightbox('/brickfield/svc_gipszkarton.jpg','Gipszkarton')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-layout-board"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Gipszkarton</h3><p style="font-size:12px;color:#444;line-height:1.6;">Válaszfalak, álmennyezetek.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_komuves.jpg')" onclick="openLightbox('/brickfield/svc_komuves.jpg','Kőműves munkák')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-building"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Kőműves munkák</h3><p style="font-size:12px;color:#444;line-height:1.6;">Falazás, burkolás, vakolás.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_festes.jpg')" onclick="openLightbox('/brickfield/svc_festes.jpg','Gépi festés')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-paint"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Gépi festés</h3><p style="font-size:12px;color:#444;line-height:1.6;">Ipari gépi festés, glettelés.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_szigeteles.jpg')" onclick="openLightbox('/brickfield/svc_szigeteles.jpg','Homlokzat')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-home"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Homlokzat</h3><p style="font-size:12px;color:#444;line-height:1.6;">Szigetelés, állványozás 1500nm.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_terkovezes.jpg')" onclick="openLightbox('/brickfield/svc_terkovezes.jpg','Térkövezés')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-road"></i></div><h3 style="font-size:12px;font-weight:700;color:#111;margin-bottom:6px;text-transform:uppercase;">Térkövezés</h3><p style="font-size:12px;color:#444;line-height:1.6;">Járdák, teraszok, parkolók.</p></div></div>
   </div>
   <div style="margin-top:36px;text-align:center"><a href="szolgaltatasok.html" class="btn-red">Összes szolgáltatás →</a></div>
 </section>
@@ -263,9 +273,9 @@ footer {
   <div class="sec-lbl">Referenciák</div>
   <div class="sec-title white">Néhány elvégzett munkánk</div>
   <div class="ref-grid">
-    <a href="referenciak.html" class="r-card"><div class="r-img" style="background-image:url('/brickfield/svc_szigeteles.jpg')"><div class="r-img-ov"></div></div><div class="r-body"><h4>Lakóépület homlokzat</h4><p>Budapest, 2024</p><div class="rtag">Homlokzat</div></div></a>
-    <a href="referenciak.html" class="r-card"><div class="r-img" style="background-image:url('/brickfield/gep_esztrich.jpg')"><div class="r-img-ov"></div></div><div class="r-body"><h4>Ipari csarnok esztrich</h4><p>Pest megye, 2024</p><div class="rtag">Betonozás</div></div></a>
-    <a href="referenciak.html" class="r-card"><div class="r-img" style="background-image:url('/brickfield/svc_terkovezes.jpg')"><div class="r-img-ov"></div></div><div class="r-body"><h4>Térkövezés, kerti munkák</h4><p>Balaton-felvidék, 2023</p><div class="rtag">Kültér</div></div></a>
+    <a href="referenciak.html" class="r-card"><div class="r-img" style="background-image:url('/brickfield/svc_szigeteles.jpg')" onclick="event.preventDefault();openLightbox('/brickfield/svc_szigeteles.jpg','Lakóépület homlokzat')"><div class="r-img-ov"></div></div><div class="r-body"><h4>Lakóépület homlokzat</h4><p>Budapest, 2024</p><div class="rtag">Homlokzat</div></div></a>
+    <a href="referenciak.html" class="r-card"><div class="r-img" style="background-image:url('/brickfield/gep_esztrich.jpg')" onclick="event.preventDefault();openLightbox('/brickfield/gep_esztrich.jpg','Ipari csarnok esztrich')"><div class="r-img-ov"></div></div><div class="r-body"><h4>Ipari csarnok esztrich</h4><p>Pest megye, 2024</p><div class="rtag">Betonozás</div></div></a>
+    <a href="referenciak.html" class="r-card"><div class="r-img" style="background-image:url('/brickfield/svc_terkovezes.jpg')" onclick="event.preventDefault();openLightbox('/brickfield/svc_terkovezes.jpg','Térkövezés, kerti munkák')"><div class="r-img-ov"></div></div><div class="r-body"><h4>Térkövezés, kerti munkák</h4><p>Balaton-felvidék, 2023</p><div class="rtag">Kültér</div></div></a>
   </div>
   <div style="margin-top:32px;text-align:center"><a href="referenciak.html" class="btn-red">Összes referencia →</a></div>
 </section>
@@ -299,6 +309,21 @@ if (localStorage.getItem('cookieConsent')) {
 <script>
 function toggleNav(){
   document.querySelector('.nlinks').classList.toggle('open');
+}
+</script>
+
+<div id="lightbox" onclick="closeLightbox()">
+  <button id="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+function openLightbox(src, alt){
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-img').alt = alt || '';
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
 }
 </script>
 </body>

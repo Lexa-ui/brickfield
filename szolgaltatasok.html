@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brick Field Kft. — Szolgáltatások</title>
+<link rel="icon" type="image/x-icon" href="/brickfield/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/brickfield/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/brickfield/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/brickfield/apple-touch-icon.png">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -73,7 +78,7 @@ footer {
   box-shadow:inset 0 0 0 9999px rgba(255,255,255,0.15);
 }
 .card-white { border:1px solid #bbb; border-top:3px solid var(--red); background:rgba(255,255,255,.92); overflow:hidden; }
-.svc-img { aspect-ratio:16/9; background-size:cover; background-position:center; transition:background-size .35s ease; }
+.svc-img { aspect-ratio:16/9; background-size:cover; background-position:center; transition:background-size .35s ease; cursor:zoom-in; }
 .card-white:hover .svc-img { background-size:115%; }
 .svc-body { padding:20px 20px 22px; }
 .card-icon { width:36px; height:36px; background:var(--red); display:flex; align-items:center; justify-content:center; margin-bottom:12px; }
@@ -143,6 +148,11 @@ footer {
   .sgrid{ grid-template-columns:1fr; }
 }
 
+
+#lightbox { display:none; position:fixed; inset:0; background:rgba(10,10,10,.94); z-index:9998; align-items:center; justify-content:center; padding:40px; cursor:zoom-out; }
+#lightbox.open { display:flex; }
+#lightbox img { max-width:90%; max-height:90%; box-shadow:0 20px 60px rgba(0,0,0,.6); }
+#lightbox-close { position:absolute; top:20px; right:28px; color:#fff; font-size:34px; line-height:1; cursor:pointer; background:none; border:none; }
 </style>
 </head>
 <body><nav><img src="/brickfield/logo_atlatszo.png" alt="Brick Field Kft." style="height:120px;width:auto;display:block;"><button class="nav-toggle" onclick="toggleNav()"><i class="ti ti-menu-2"></i></button><ul class="nlinks"><li><a href="index.html" class="">Főoldal</a></li><li><a href="rolunk.html" class="">Rólunk</a></li><li><a href="szolgaltatasok.html" class="active">Szolgáltatások</a></li><li><a href="geppark.html" class="">Géppark</a></li><li><a href="referenciak.html" class="">Referenciák</a></li><li><a href="kapcsolat.html" class="">Kapcsolat</a></li></ul><a href="kapcsolat.html" class="ncta">Ajánlatot kérek</a></nav>
@@ -156,15 +166,15 @@ footer {
   <div class="sec-lbl">Munkáink</div>
   <div class="sec-title">Összes szolgáltatás</div>
   <div class="sgrid">
-    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_beton.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-layers-intersect"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Estrich betonozás</h3><p style="font-size:13px;color:#444;line-height:1.7;">Minőségi esztrich alapok gépi és kézi kivitelezéssel, nagy felületek esetén is gyorsan.</p></div></div>
-    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_gipszkarton.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-layout-board"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Gipszkarton szerelés</h3><p style="font-size:13px;color:#444;line-height:1.7;">Válaszfalak, álmennyezetek, hangszigetelés profin megvalósítva.</p></div></div>
-    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_komuves.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-building"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Kőműves munkák</h3><p style="font-size:13px;color:#444;line-height:1.7;">Falazás, burkolás, vakolás, festés — komplex kőműves kivitelezés.</p></div></div>
-    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_vakolas.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-spray"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Gépi vakolás</h3><p style="font-size:13px;color:#444;line-height:1.7;">Gépi vakolás nagy felületeken — gyors, egyenletes, profi eredmény.</p></div></div>
-    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_festes.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-paint"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Gépi festés & glettelés</h3><p style="font-size:13px;color:#444;line-height:1.7;">Ipari gépi festés és glettelés nagy felületeken, egyenletesen.</p></div></div>
-    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_szinezes.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-color-swatch"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Gépi színezés</h3><p style="font-size:13px;color:#444;line-height:1.7;">Homlokzati és belső gépi színezés — tartós, egyenletes bevonat.</p></div></div>
-    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_szigeteles.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-home"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Szigetelés & homlokzat</h3><p style="font-size:13px;color:#444;line-height:1.7;">Homlokzati hőszigetelés, saját 1500 nm-es állványrendszerrel.</p></div></div>
-    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_terkovezes.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-road"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Térkövezés</h3><p style="font-size:13px;color:#444;line-height:1.7;">Járdák, teraszok, parkolók, udvarok térkő burkolása precízen.</p></div></div>
-    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_ontozo.jpg')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-plant"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Öntözőrendszer</h3><p style="font-size:13px;color:#444;line-height:1.7;">Kerti öntözőrendszer egyedi tervezése és telepítése.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_beton.jpg')" onclick="openLightbox('/brickfield/svc_beton.jpg','Estrich betonozás')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-layers-intersect"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Estrich betonozás</h3><p style="font-size:13px;color:#444;line-height:1.7;">Minőségi esztrich alapok gépi és kézi kivitelezéssel, nagy felületek esetén is gyorsan.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_gipszkarton.jpg')" onclick="openLightbox('/brickfield/svc_gipszkarton.jpg','Gipszkarton szerelés')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-layout-board"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Gipszkarton szerelés</h3><p style="font-size:13px;color:#444;line-height:1.7;">Válaszfalak, álmennyezetek, hangszigetelés profin megvalósítva.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_komuves.jpg')" onclick="openLightbox('/brickfield/svc_komuves.jpg','Kőműves munkák')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-building"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Kőműves munkák</h3><p style="font-size:13px;color:#444;line-height:1.7;">Falazás, burkolás, vakolás, festés — komplex kőműves kivitelezés.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_vakolas.jpg')" onclick="openLightbox('/brickfield/svc_vakolas.jpg','Gépi vakolás')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-spray"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Gépi vakolás</h3><p style="font-size:13px;color:#444;line-height:1.7;">Gépi vakolás nagy felületeken — gyors, egyenletes, profi eredmény.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_festes.jpg')" onclick="openLightbox('/brickfield/svc_festes.jpg','Gépi festés & glettelés')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-paint"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Gépi festés & glettelés</h3><p style="font-size:13px;color:#444;line-height:1.7;">Ipari gépi festés és glettelés nagy felületeken, egyenletesen.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_szinezes.jpg')" onclick="openLightbox('/brickfield/svc_szinezes.jpg','Gépi színezés')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-color-swatch"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Gépi színezés</h3><p style="font-size:13px;color:#444;line-height:1.7;">Homlokzati és belső gépi színezés — tartós, egyenletes bevonat.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_szigeteles.jpg')" onclick="openLightbox('/brickfield/svc_szigeteles.jpg','Szigetelés & homlokzat')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-home"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Szigetelés & homlokzat</h3><p style="font-size:13px;color:#444;line-height:1.7;">Homlokzati hőszigetelés, saját 1500 nm-es állványrendszerrel.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_terkovezes.jpg')" onclick="openLightbox('/brickfield/svc_terkovezes.jpg','Térkövezés')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-road"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Térkövezés</h3><p style="font-size:13px;color:#444;line-height:1.7;">Járdák, teraszok, parkolók, udvarok térkő burkolása precízen.</p></div></div>
+    <div class="card-white"><div class="svc-img" style="background-image:url('/brickfield/svc_ontozo.jpg')" onclick="openLightbox('/brickfield/svc_ontozo.jpg','Öntözőrendszer')"></div><div class="svc-body"><div class="card-icon"><i class="ti ti-plant"></i></div><h3 style="font-size:13px;font-weight:700;color:#111;margin-bottom:8px;text-transform:uppercase;">Öntözőrendszer</h3><p style="font-size:13px;color:#444;line-height:1.7;">Kerti öntözőrendszer egyedi tervezése és telepítése.</p></div></div>
   </div>
 </section>
 <div class="cta-band">
@@ -201,6 +211,21 @@ if (localStorage.getItem('cookieConsent')) {
 <script>
 function toggleNav(){
   document.querySelector('.nlinks').classList.toggle('open');
+}
+</script>
+
+<div id="lightbox" onclick="closeLightbox()">
+  <button id="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+function openLightbox(src, alt){
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-img').alt = alt || '';
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
 }
 </script>
 </body>
